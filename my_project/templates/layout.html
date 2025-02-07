@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"> <!--Location found due to settings.py -->
+</head>
+<body>
+    <nav>This place is for navbar</nav>
+    <h1>{% block content %}Default{% endblock %}</h1>
+</body>
+</html>

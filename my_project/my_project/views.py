@@ -6,5 +6,5 @@ def home(request):
     return render(request, 'website/home.html') # it will look for home.html in templates folder
 
 def about(request):
-    return HttpResponse("Hello, This is about page")
+    return HttpResponse("This is the about page")
 
