@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'services',
+    'tailwind',
+    'theme',
 ]
+TAILWIND_APP_NAME = 'theme'     # Tells the exact address of the tailwind app.
+INTERNAL_IPS = ['127.0.0.1']    # Only this IP can access the debug toolbar.
+NPM_BIN_PATH = '/usr/bin/npm'   # django checks it if npm not found at the default location.
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
