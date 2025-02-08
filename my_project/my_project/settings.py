@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'services',
     'tailwind',
     'theme',
+    'django_browser_reload',
 ]
 TAILWIND_APP_NAME = 'theme'     # Tells the exact address of the tailwind app.
 INTERNAL_IPS = ['127.0.0.1']    # Only this IP can access the debug toolbar.
@@ -54,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'my_project.urls'

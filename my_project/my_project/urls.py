@@ -23,5 +23,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
     path('about/', views.about, name='about'),
-    path('services/', include('services.urls'))  # cuz we have services app defined in settings.py
+    path('services/', include('services.urls')),  # cuz we have services app defined in settings.py
+    path('__reload__/', include('django_browser_reload.urls'))
 ]
