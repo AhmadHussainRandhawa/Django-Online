@@ -126,7 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] # List cuz we can have multiple static folders
+
+MEDIA_URL = '/media/'                           # This is the URL for public
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')    # This is the url for django; we cannot have multiple media folders.
 
 
 # Default primary key field type
