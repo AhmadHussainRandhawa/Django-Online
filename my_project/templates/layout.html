@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Default{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}"> <!--Location found due to settings.py -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     {% tailwind_css %}
 </head>
-<body>
-    <nav>This place is for navbar</nav>
-    <h1>{% block content %}Default{% endblock %}</h1>
+<body class="bg-blue-900 text-white">
+    <nav class="p-4 bg-gray-800">This place is for navbar</nav>
+    <h1 class="text-center text-4xl font-bold mt-8">{% block content %}Default{% endblock %}</h1>
 </body>
 </html>

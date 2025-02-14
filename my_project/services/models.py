@@ -8,7 +8,7 @@ class Service(models.Model):
 
     title = models.CharField(max_length=20)
     image = models.ImageField(upload_to='services/images/')
-    description = models.TextField(max_length=200)
+    description = models.TextField(default='')
     date = models.DateTimeField(default=timezone.now)
 
 def __str__(self):

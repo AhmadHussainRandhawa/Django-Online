@@ -25,7 +25,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
     path('about/', views.about, name='about'),
-    path('services/', include('services.urls')),  # cuz we have services app defined in settings.py
+    path('services/', include('services.urls')),  # This chai comes cuz we mentioned it in INSTALLED_APPS in settings.py
     path('__reload__/', include('django_browser_reload.urls'))
 ]
 if settings.DEBUG:

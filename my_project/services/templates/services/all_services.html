@@ -1,3 +1,21 @@
 {% extends "layout.html" %}
 {% block title %}services{% endblock %}
-{% block content %}All type of services available at this page{% endblock %}
+{% block content %}All types of services available on this page
+
+<div class='grid grid-cols-3 gap-4'>
+    {% for service in services %}
+        <div class='bg-slate-700 p-2 flex flex-col justify-between h-full'>
+            <img src="{{service.image.url}}" alt="" class="w-full h-auto mb-4">
+            <h3 class="text-lg font-semibold text-white mb-2">{{ service.title }}</h3>
+            <a href={% url "service_detail" service.id %}>
+                <button 
+                type='button' 
+                class="flex justify-center items-center bg-orange-600 w-full
+                 hover:bg-orange-700 text-white font-medium py-1 px-2 rounded">
+                    {{service.service_types}} - {{service.id}}
+                </button>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
