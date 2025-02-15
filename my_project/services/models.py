@@ -25,7 +25,7 @@ class ServiceReview(models.Model):
     date_added = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return f"{self.user.name} review for {self.service.title}"
+        return f"{self.user.username} review for {self.review_service_link.title}"
 
 # Many to Many Relationship
 class WebStore(models.Model):
