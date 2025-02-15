@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Test Page for Forms</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+{% if stores %}
+    <h2>Stores Available</h2>
+    <ul>
+        {% for store in stores %}
+            <li><strong>{{ store.name }}</strong> - {{ store.location }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No stores available for the selected service.</p>
+{% endif %}
+{% endblock %}
