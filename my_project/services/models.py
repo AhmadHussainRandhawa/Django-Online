@@ -29,7 +29,7 @@ class ServiceReview(models.Model):
 
 # Many to Many Relationship
 class WebStore(models.Model):
-    store_service_link = models.ManyToManyField(Service, on_delete=models.CASCADE, related_name='store')
+    store_service_link = models.ManyToManyField(Service, related_name='store')
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=200)
 
@@ -39,7 +39,7 @@ class WebStore(models.Model):
 # one to one relationship
 class ServiceCertificate(models.Model):
     service_certificate_link = models.OneToOneField(Service, on_delete=models.CASCADE, related_name='certificate')
-    certificate_number = models.CharField()
+    certificate_number = models.CharField(max_length=150)
     issued_date = models.DateTimeField()
     due_date = models.DateTimeField()
 
