@@ -3,7 +3,7 @@
 ## Introduction
 Welcome to **Services**, a Django-based web application that allows users to browse and manage services, reviews, and certificates with ease. This project was built as part of my Django learning journey, combining models, views, templates, and Tailwind CSS for a functional and polished application.
 
-[Check out the live demo here!](https://your-app-name.onrender.com)
+[Check out the live demo here!](https://ahmadhussain.pythonanywhere.com)
 
 ---
 
@@ -20,7 +20,7 @@ Welcome to **Services**, a Django-based web application that allows users to bro
 - **Backend**: Django
 - **Frontend**: HTML, Tailwind CSS
 - **Database**: SQLite (default for development)
-- **Deployment**: Hosted on [Render](https://render.com) (Free Tier)
+- **Deployment**: Hosted on [PythonAnywhere](https://www.pythonanywhere.com)
 
 ---
 
@@ -67,21 +67,28 @@ Ensure you have the following installed on your system:
 
 ---
 
-## Deployment on Render
+## Deployment on PythonAnywhere
 
 ### Steps to Deploy:
 1. Push your code to GitHub.
-2. Sign up at [Render](https://render.com) and connect your GitHub repository.
-3. Create a new **Web Service** with the following configurations:
-   - **Build Command:**
-     ```bash
-     pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate
-     ```
-   - **Start Command:**
-     ```bash
-     gunicorn services.wsgi
-     ```
-4. Wait for the deployment to complete. Your app will be live at `https://<your-app-name>.onrender.com`.
+2. Log in to [PythonAnywhere](https://www.pythonanywhere.com/).
+3. Open a **Bash Console** and clone your repository:
+   ```bash
+   git clone <repository_url>
+   cd services
+   ```
+4. Set up your virtual environment:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   ```
+5. Configure WSGI:
+   - Go to **Web** section in PythonAnywhere.
+   - Set your **Working Directory** to `/home/yourusername/services/`.
+   - Set your **WSGI file** to point to `services/wsgi.py`.
+   
+6. Restart the web app to apply changes.
 
 ---
 
